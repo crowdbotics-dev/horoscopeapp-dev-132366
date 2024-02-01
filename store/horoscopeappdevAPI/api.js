@@ -1,91 +1,100 @@
-import axios from "axios"
+import axios from "axios";
 const horoscopeappdevAPI = axios.create({
   baseURL: "https://horoscopeapp-dev-132366.botics.co",
-  headers: { Accept: "application/json", "Content-Type": "application/json" }
-})
+  headers: {
+    Accept: "application/json",
+    "Content-Type": "application/json"
+  }
+});
+
 function api_docs_schema_retrieve(payload) {
   return horoscopeappdevAPI.get(`/api-docs/schema/`, {
-    params: { lang: payload.lang }
-  })
+    params: {
+      lang: payload.lang
+    }
+  });
 }
+
 function api_v1_login_create(payload) {
-  return horoscopeappdevAPI.post(`/api/v1/login/`, payload)
+  return horoscopeappdevAPI.post(`/api/v1/login/`, payload);
 }
+
 function api_v1_signup_create(payload) {
-  return horoscopeappdevAPI.post(`/api/v1/signup/`, payload)
+  return horoscopeappdevAPI.post(`/api/v1/signup/`, payload);
 }
+
 function modules_two_factor_authentication_enable_2fa_retrieve(payload) {
-  return horoscopeappdevAPI.get(`/modules/two-factor-authentication/enable/2fa`)
+  return horoscopeappdevAPI.get(`/modules/two-factor-authentication/enable/2fa`);
 }
+
 function modules_two_factor_authentication_enable_2fa_create(payload) {
-  return horoscopeappdevAPI.post(
-    `/modules/two-factor-authentication/enable/2fa`
-  )
+  return horoscopeappdevAPI.post(`/modules/two-factor-authentication/enable/2fa`);
 }
+
 function modules_two_factor_authentication_enable_2fa_destroy(payload) {
-  return horoscopeappdevAPI.delete(
-    `/modules/two-factor-authentication/enable/2fa`
-  )
+  return horoscopeappdevAPI.delete(`/modules/two-factor-authentication/enable/2fa`);
 }
-function modules_two_factor_authentication_google_authenticator_qr_retrieve(
-  payload
-) {
-  return horoscopeappdevAPI.get(
-    `/modules/two-factor-authentication/google/authenticator/qr`
-  )
+
+function modules_two_factor_authentication_google_authenticator_qr_retrieve(payload) {
+  return horoscopeappdevAPI.get(`/modules/two-factor-authentication/google/authenticator/qr`);
 }
+
 function modules_two_factor_authentication_send_otp_create(payload) {
-  return horoscopeappdevAPI.post(`/modules/two-factor-authentication/send/otp`)
+  return horoscopeappdevAPI.post(`/modules/two-factor-authentication/send/otp`);
 }
+
 function modules_two_factor_authentication_verify_otp_create(payload) {
-  return horoscopeappdevAPI.post(
-    `/modules/two-factor-authentication/verify/otp`
-  )
+  return horoscopeappdevAPI.post(`/modules/two-factor-authentication/verify/otp`);
 }
+
 function modules_two_factor_authentication_verify_otp_create_2(payload) {
-  return horoscopeappdevAPI.post(
-    `/modules/two-factor-authentication/verify/otp/${payload.enable}`
-  )
+  return horoscopeappdevAPI.post(`/modules/two-factor-authentication/verify/otp/${payload.enable}`);
 }
+
 function rest_auth_login_create(payload) {
-  return horoscopeappdevAPI.post(`/rest-auth/login/`, payload)
+  return horoscopeappdevAPI.post(`/rest-auth/login/`, payload);
 }
+
 function rest_auth_logout_create(payload) {
-  return horoscopeappdevAPI.post(`/rest-auth/logout/`)
+  return horoscopeappdevAPI.post(`/rest-auth/logout/`);
 }
+
 function rest_auth_password_change_create(payload) {
-  return horoscopeappdevAPI.post(`/rest-auth/password/change/`, payload)
+  return horoscopeappdevAPI.post(`/rest-auth/password/change/`, payload);
 }
+
 function rest_auth_password_reset_create(payload) {
-  return horoscopeappdevAPI.post(`/rest-auth/password/reset/`, payload)
+  return horoscopeappdevAPI.post(`/rest-auth/password/reset/`, payload);
 }
+
 function rest_auth_password_reset_confirm_create(payload) {
-  return horoscopeappdevAPI.post(`/rest-auth/password/reset/confirm/`, payload)
+  return horoscopeappdevAPI.post(`/rest-auth/password/reset/confirm/`, payload);
 }
+
 function rest_auth_registration_create(payload) {
-  return horoscopeappdevAPI.post(`/rest-auth/registration/`, payload)
+  return horoscopeappdevAPI.post(`/rest-auth/registration/`, payload);
 }
+
 function rest_auth_registration_resend_email_create(payload) {
-  return horoscopeappdevAPI.post(
-    `/rest-auth/registration/resend-email/`,
-    payload
-  )
+  return horoscopeappdevAPI.post(`/rest-auth/registration/resend-email/`, payload);
 }
+
 function rest_auth_registration_verify_email_create(payload) {
-  return horoscopeappdevAPI.post(
-    `/rest-auth/registration/verify-email/`,
-    payload
-  )
+  return horoscopeappdevAPI.post(`/rest-auth/registration/verify-email/`, payload);
 }
+
 function rest_auth_user_retrieve(payload) {
-  return horoscopeappdevAPI.get(`/rest-auth/user/`)
+  return horoscopeappdevAPI.get(`/rest-auth/user/`);
 }
+
 function rest_auth_user_update(payload) {
-  return horoscopeappdevAPI.put(`/rest-auth/user/`, payload)
+  return horoscopeappdevAPI.put(`/rest-auth/user/`, payload);
 }
+
 function rest_auth_user_partial_update(payload) {
-  return horoscopeappdevAPI.patch(`/rest-auth/user/`, payload)
+  return horoscopeappdevAPI.patch(`/rest-auth/user/`, payload);
 }
+
 export const apiService = {
   api_docs_schema_retrieve,
   api_v1_login_create,
@@ -108,4 +117,4 @@ export const apiService = {
   rest_auth_user_retrieve,
   rest_auth_user_update,
   rest_auth_user_partial_update
-}
+};
